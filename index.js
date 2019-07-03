@@ -7,14 +7,18 @@ window.addEventListener('load', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.append(renderer.domElement);
 
-  const controls = new OrbitControls(camera, renderer.domElement);
+  new OrbitControls(camera, renderer.domElement);
 
   const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+  const material = new THREE.MeshPhongMaterial({ color: 0xffffff, emissive: 0x222222 });
   const cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
 
   camera.position.z = 5;
+
+  const spotLight = new THREE.SpotLight(0xffffff);
+  spotLight.position.set(-0, 30, 60);
+  scene.add(spotLight);
 
   function animate() {
     cube.rotation.x += 0.01;
