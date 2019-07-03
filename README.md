@@ -1,9 +1,10 @@
 # ThreeJS OP-1
 
-This is a parallel project to my other one where I attempt to model and render
-an OP-1 by Teenage Engineering using pure WebGL. It's pretty hard so I've created
-this meanwhile so that I can have something to hopefully progress on faster and
-carry over ideas to the original repository.
+This is a [parallel project](https://github.com/TomasHubelbauer/webgl-op-1) to
+my other one where I attempt to model and render an OP-1 by Teenage Engineering
+using pure WebGL. It's pretty hard so I've created this meanwhile so that I can
+have something to hopefully progress on faster and carry over ideas to the
+original repository.
 
 It looks like ThreeJS doesn't really have many modeling tools by a quick look,
 but I might find it does or in the case of this project I will be happier to use
