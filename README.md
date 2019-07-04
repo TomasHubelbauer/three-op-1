@@ -2,6 +2,8 @@
 
 [**DEMO**](https://tomashubelbauer.github.io/three-op-1)
 
+![](op-1.png)
+
 This is a [parallel project](https://github.com/TomasHubelbauer/webgl-op-1) to
 my other one where I attempt to model and render an OP-1 by Teenage Engineering
 using pure WebGL. It's pretty hard so I've created this meanwhile so that I can
