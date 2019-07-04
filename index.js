@@ -9,12 +9,18 @@ window.addEventListener('load', () => {
 
   new OrbitControls(camera, renderer.domElement);
 
-  const geometry = new THREE.BoxGeometry(1, 1, 1);
-  const material = new THREE.MeshPhongMaterial({ color: 0xffffff, emissive: 0x222222 });
+  const shape = new THREE.Shape();
+  shape.moveTo(-(290 / 2), -(104 / 2));
+  shape.lineTo(290 / 2, -(104 / 2));
+  shape.lineTo(290 / 2, 104 / 2);
+  shape.lineTo(-(290 / 2), 104 / 2);
+
+  const geometry = new THREE.ExtrudeGeometry(shape, { amount: 10, bevelEnabled: false });
+  const material = new THREE.MeshPhongMaterial({ color: 0xffffff, emissive: 0x777777 });
   const cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
 
-  camera.position.z = 5;
+  camera.position.z = 300;
 
   const spotLight = new THREE.SpotLight(0xffffff);
   spotLight.position.set(-0, 30, 60);
@@ -22,7 +28,9 @@ window.addEventListener('load', () => {
 
   function animate() {
     cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    cube.rotation.y += 0.02;
+    cube.rotation.z += 0.03;
+    camera.lookAt(cube.position);
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   }
